@@ -1,0 +1,8 @@
+system_hostname:
+timezone:
+user_PUID:
+user_PGID:
+ssd_mount_path: /mnt/ssd
+ssd_label: ssd
+hdd_mount_path: /mnt/hdd
+hdd_label: hdd
