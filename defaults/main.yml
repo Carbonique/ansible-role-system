@@ -1,7 +1,6 @@
-system_hostname:
-timezone:
-user_PUID:
-user_PGID:
+
+user_PUID: "{{ ansible_user }}"
+user_PGID: "{{ ansible_user }}"
 ssd_mount_path: /mnt/ssd
 ssd_label: ssd
 hdd_mount_path: /mnt/hdd
