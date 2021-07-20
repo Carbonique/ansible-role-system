@@ -24,27 +24,21 @@
   notify:
     - reboot host
 
-- name: "Ensure mount directories exists"
+- name: "Ensure mount directory exists"
   file:
-    path: "{{ item }}"
+    path: "{{ item.mount_path }}"
     state: directory
     mode: 0755
-    owner: "{{ user_PUID | default('0') }}"
-    group: "{{ user_PGID | default('0') }}"
+    owner: "{{ item.user }}"
+    group: "{{ item.group }}"
   with_items:
-    - "{{ ssd_mount_path }}"
-    - "{{ hdd_mount_path }}"
+    - "{{ filesystems }}"
 
-- name: Mount up SSD by label
+- name: Mount up disk by label
   ansible.posix.mount:
-    path: "{{ hdd_mount_path }}"
-    src: "LABEL={{ ssd_label }}"
-    fstype: ext4
+    path: "{{ item.mount_path }}"
+    src: "LABEL={{ item.label }}"
+    fstype: "{{ item.fstype }}"
     state: mounted
-
-- name: Mount up HDD by label
-  ansible.posix.mount:
-    path: "{{ hdd_mount_path }}"
-    src: "LABEL={{ hdd_label }}"
-    fstype: ext4
-    state: mounted
+  with_items:
+    - "{{ filesystems }}"

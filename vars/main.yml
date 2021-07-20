@@ -1,2 +1,15 @@
+# Hostname which you want to give to the target
 system_hostname:
 timezone:
+
+filesystems:
+  - mount_path: # Path to mount filesystem to 
+    label: # Label of filesystem
+    fstype: # Filesystem type
+    user: # UID for the mount path
+    group: # GID for the mount path
+  - mount_path: 
+    label:
+    fstype:
+    user:
+    group: 
