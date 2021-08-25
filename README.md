@@ -8,13 +8,12 @@ Ansible role to do a variety of system related tasks such as changing hostnames,
 
 # Installation
 
-Add the following to `requirements.yml`:
+The following would be enough to trigger everything. Optionally, you can overrule certain variables.
 
-```
-- src: git@gitlab.com:carbonique/ansible-role-system.git
-  scm: git
-  name: system
-  version: #Leave empty for latest. To download a specific version: use the tag as listed in repo
+``` yml
+include:
+  remote: "https://gitlab.com/carbonique/gitlab-ci-templates/-/raw/main/ansible/deploy/ansible-deploy-template.yml"
+
 ```
 
 For system wide installation:

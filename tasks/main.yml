@@ -33,6 +33,7 @@
     group: "{{ item.group }}"
   with_items:
     - "{{ filesystems }}"
+  when: mount_disks is defined and not mount_disks
 
 - name: Mount up disk by label
   ansible.posix.mount:
@@ -42,3 +43,4 @@
     state: mounted
   with_items:
     - "{{ filesystems }}"
+  when: mount_disks is defined and not mount_disks
