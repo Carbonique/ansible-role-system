@@ -26,5 +26,4 @@ For installation to the current directory:
 
 # Defaults & Variables
 
-Variables have to be added by user
-For variables see: `vars/main.yml`
+For defaults see: `defaults/main.yml`
