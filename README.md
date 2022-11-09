@@ -11,7 +11,7 @@ Ansible role to do a variety of system related tasks such as changing hostnames,
 Add the following to `requirements.yml`:
 
 ```
-- src: git@gitlab.com:carbonique/ansible-role-system.git
+- src: https://github.com/carbonique/ansible-role-system.git
   scm: git
   name: system
   version: #Leave empty for latest. To download a specific version: use the tag as listed in repo
